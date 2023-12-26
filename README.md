@@ -32,4 +32,6 @@ Before image processing, several preprocessing steps are performed:
 
 ### Modelling
 
+In the code, `resnet18` is used, which can be interchanged with other pre-trained model, such as the `efficientnet_b4`.
+
 The `efficientnet_b4` model initializes and trains a CNN model using EfficientNet-B4. The model is fine-tuned for a binary classification task. If a saved model state exists, it is loaded and evaluated on a validation dataset. Otherwise, the model is trained using a cross-entropy loss function and Adam optimizer. The training loop accumulates gradients over multiple batches, updates the model's parameters, and computes the loss and accuracy metrics. Early stopping is implemented to prevent overfitting. After training, the model's state dictionary is saved for future use.
